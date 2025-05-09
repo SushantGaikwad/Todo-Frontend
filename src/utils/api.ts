@@ -23,13 +23,12 @@ const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
   headers: {
     Authorization: `Bearer ${sessionStorage.getItem("accessToken")}`,
-    "Access-Control-Allow-Origin": "http://localhost:3001/api",
+    "Access-Control-Allow-Origin": import.meta.env.VITE_API_URL,
     "Content-Type": "application/json",
   },
   withCredentials: true,
 });
 
-console.log(">>> baseURL :", import.meta.env.VITE_API_URL);
 
 api.interceptors.response.use(
   (response) => response,

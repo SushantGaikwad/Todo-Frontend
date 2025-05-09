@@ -14,17 +14,7 @@ export const login = async (email: string, password: string) => {
 };
 
 export const logout = async () => {
-  await api.post(
-    "/auth/logout",
-    {},
-    {
-      withCredentials: true,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  await api.post("/auth/logout");
 
   sessionStorage.removeItem("accessToken");
 };
