@@ -23,12 +23,11 @@ const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
   headers: {
     Authorization: `Bearer ${sessionStorage.getItem("accessToken")}`,
-    "Access-Control-Allow-Origin": import.meta.env.VITE_API_URL,
+    "Access-Control-Allow-Origin": `https://todo-backend-tvvs.onrender.com`,
     "Content-Type": "application/json",
   },
   withCredentials: true,
 });
-
 
 api.interceptors.response.use(
   (response) => response,
