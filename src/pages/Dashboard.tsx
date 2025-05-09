@@ -17,7 +17,7 @@ function Dashboard() {
       setTodos(data);
     } catch (error: any) {
       toast.error(error.message || 'Failed to fetch todos');
-      navigate('/login');
+      navigate('/');
     } finally {
       setLoading(false);
     }
@@ -26,7 +26,7 @@ function Dashboard() {
   const handleLogout = async () => {
     try {
       await logout();
-      navigate('/login');
+      navigate('/');
       toast.success('Logged out successfully');
     } catch (error: any) {
       toast.error(error.message || 'Failed to logout');

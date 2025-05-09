@@ -23,7 +23,7 @@ function AuthForm({ type, onSubmit }: AuthFormProps) {
     setLoading(true);
     try {
       await onSubmit(email, password);
-      navigate('/');
+      navigate('/dashboard');
     } catch (error: any) {
       toast.error(error.message || 'An error occurred');
     } finally {
@@ -88,7 +88,7 @@ function AuthForm({ type, onSubmit }: AuthFormProps) {
         ) : (
           <>
             Already have an account?{' '}
-            <Link to="/login" className="text-blue-600 hover:underline">
+            <Link to="/" className="text-blue-600 hover:underline">
               Login
             </Link>
           </>
