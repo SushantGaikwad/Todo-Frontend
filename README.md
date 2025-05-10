@@ -36,5 +36,11 @@ npm run dev
 
 5. Open http://localhost:5173 in your browser.
 
+6. To run test cases
+```
+npx playwright install
+npm run test
+```
+
 
 
