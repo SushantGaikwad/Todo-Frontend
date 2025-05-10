@@ -1,7 +1,6 @@
 import { FormEvent, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import ThemeToggle from './ThemeToggle';
 
 interface AuthFormProps {
   type: 'login' | 'signup';
