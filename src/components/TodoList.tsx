@@ -2,7 +2,7 @@ import { useState } from 'react';
 import TodoItem from './TodoItem';
 import { createTodo } from '../utils/todoApis';
 import toast from 'react-hot-toast';
-import { type Todo } from '../types';
+import { Todo } from '../types';
 
 interface TodoListProps {
   todos: Todo[];
@@ -37,39 +37,39 @@ function TodoList({ todos, onUpdate }: TodoListProps) {
   return (
     <div className="max-w-2xl mx-auto mt-10">
       <div className="mb-6">
-        <h2 className="text-xl font-bold mb-4">Create New Todo</h2>
+        <h2 className="text-xl font-bold mb-4 text-gray-800 dark:text-gray-200">Create New Todo</h2>
         <input
           type="text"
           placeholder="Title"
           value={newTodo.title}
           onChange={(e) => setNewTodo({ ...newTodo, title: e.target.value })}
-          className="w-full p-2 border rounded-md mb-2"
+          className="w-full p-2 border rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-gray-300 dark:border-gray-600 mb-2"
         />
         <textarea
           placeholder="Description"
           value={newTodo.description}
           onChange={(e) => setNewTodo({ ...newTodo, description: e.target.value })}
-          className="w-full p-2 border rounded-md mb-2"
+          className="w-full p-2 border rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-gray-300 dark:border-gray-600 mb-2"
         />
         <input
           type="date"
           value={newTodo.dueDate}
           onChange={(e) => setNewTodo({ ...newTodo, dueDate: e.target.value })}
-          className="w-full p-2 border rounded-md mb-2"
+          className="w-full p-2 border rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-gray-300 dark:border-gray-600 mb-2"
         />
         <button
           onClick={handleCreate}
-          className="bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700"
+          className="bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 dark:hover:bg-blue-500"
         >
           Add Todo
         </button>
       </div>
       <div className="mb-4">
-        <label className="mr-2">Filter:</label>
+        <label className="mr-2 text-gray-700 dark:text-gray-300">Filter:</label>
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value as 'all' | 'pending' | 'completed')}
-          className="p-2 border rounded-md"
+          className="p-2 border rounded-md bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-gray-300 dark:border-gray-600"
         >
           <option value="all">All</option>
           <option value="pending">Pending</option>
