@@ -17,6 +17,24 @@ A full-stack To-Do List application built with React, Express.js, MongoDB, and T
 
 ## Setup
 1. Clone this Repository 
-2. Install Dependencies -> npm install
+```
+git clone https://github.com/SushantGaikwad/Todo-Frontend.git
+```
+2. Install Dependencies 
+```
+ npm install
+ ```
 3. Create .env file you can copy values from .env.example file and replace with you own data
-4. Start the server -> npm run dev
+```
+VITE_API_URL=http://localhost:3001/api
+```
+
+4. Start the server 
+```
+npm run dev
+```
+
+5. Open http://localhost:5173 in your browser.
+
+
+
