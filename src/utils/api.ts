@@ -21,11 +21,11 @@ console.log(">>> accessToken :", getCookie("accessToken"));
 
 const api = axios.create({
   baseURL: `${import.meta.env.VITE_API_URL}/api`,
-  headers: {
-    Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-    "Access-Control-Allow-Origin": import.meta.env.VITE_API_URL,
-    "Content-Type": "application/json",
-  },
+  // headers: {
+  //   Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+  //   "Access-Control-Allow-Origin": import.meta.env.VITE_API_URL,
+  //   "Content-Type": "application/json",
+  // },
   // withCredentials: true,
 });
 

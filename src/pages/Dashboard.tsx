@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TodoList from '../components/TodoList';
 import { logout } from '../utils/authApis';
@@ -33,9 +33,16 @@ function Dashboard() {
     }
   };
 
-  useEffect(() => {
+  const accessToken = localStorage.getItem('accessToken')
+
+  const fetchData = useCallback(()=> {
     fetchTodos();
-  }, []);
+  }, [accessToken]);
+
+  useEffect(() => {
+    if(accessToken)
+    fetchData();
+  }, [accessToken]);
 
   if (loading) return <div className="text-center mt-10">Loading...</div>;
 

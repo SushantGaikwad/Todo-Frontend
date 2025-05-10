@@ -15,6 +15,5 @@ export const login = async (email: string, password: string) => {
 
 export const logout = async () => {
   await api.post("/auth/logout");
-
   localStorage.removeItem("accessToken");
 };
