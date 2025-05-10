@@ -1,6 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import ThemeToggle from './ThemeToggle';
 
 interface AuthFormProps {
   type: 'login' | 'signup';
@@ -32,7 +33,7 @@ function AuthForm({ type, onSubmit }: AuthFormProps) {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-gray-700">
+    <div className="max-w-md mx-auto mt-10 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-gray-700 -mt-px">
       <h2 className="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-gray-200">
         {type === 'login' ? 'Login' : 'Sign Up'}
       </h2>
@@ -88,7 +89,7 @@ function AuthForm({ type, onSubmit }: AuthFormProps) {
         ) : (
           <>
             Already have an account?{' '}
-            <Link to="/login" className="text-blue-600 hover:underline dark:text-blue-400">
+            <Link to="/" className="text-blue-600 hover:underline dark:text-blue-400">
               Login
             </Link>
           </>
